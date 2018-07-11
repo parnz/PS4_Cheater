@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace PS4_Cheater
 {
-    public partial class NewAddress : Form
+    public partial class FrmNewAddress : Form
     {
         private Button add_offset_btn = new Button();
         private Button del_offset_btn = new Button();
@@ -21,7 +21,7 @@ namespace PS4_Cheater
 
         private ProcessManager ProcessManager = null;
 
-        public NewAddress(ProcessManager ProcessManager)
+        public FrmNewAddress(ProcessManager ProcessManager)
         {
             InitializeComponent();
 

@@ -2,7 +2,7 @@
 {
     using System.Drawing;
     using System.Windows.Forms;
-    partial class HexEditor
+    partial class FrmHexEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -32,13 +32,13 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.hexBox = new Be.Windows.Forms.HexBox();
+            this.input_box = new System.Windows.Forms.TextBox();
+            this.find = new System.Windows.Forms.Button();
             this.refresh_btn = new System.Windows.Forms.Button();
             this.previous_btn = new System.Windows.Forms.Button();
             this.commit_btn = new System.Windows.Forms.Button();
             this.next_btn = new System.Windows.Forms.Button();
             this.page_list = new System.Windows.Forms.ComboBox();
-            this.find = new System.Windows.Forms.Button();
-            this.input_box = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -64,7 +64,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.commit_btn);
             this.splitContainer1.Panel2.Controls.Add(this.next_btn);
             this.splitContainer1.Panel2.Controls.Add(this.page_list);
-            this.splitContainer1.Size = new System.Drawing.Size(825, 581);
+            this.splitContainer1.Size = new System.Drawing.Size(825, 629);
             this.splitContainer1.SplitterDistance = 623;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -77,19 +77,36 @@
             this.hexBox.Name = "hexBox";
             this.hexBox.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             this.hexBox.ShadowSelectionVisible = false;
-            this.hexBox.Size = new System.Drawing.Size(623, 581);
+            this.hexBox.Size = new System.Drawing.Size(623, 629);
             this.hexBox.StringViewVisible = true;
             this.hexBox.TabIndex = 11;
             this.hexBox.UseFixedBytesPerLine = true;
             this.hexBox.VScrollBarVisible = true;
             // 
+            // input_box
+            // 
+            this.input_box.Location = new System.Drawing.Point(15, 304);
+            this.input_box.Name = "input_box";
+            this.input_box.Size = new System.Drawing.Size(160, 20);
+            this.input_box.TabIndex = 18;
+            // 
+            // find
+            // 
+            this.find.Location = new System.Drawing.Point(15, 354);
+            this.find.Name = "find";
+            this.find.Size = new System.Drawing.Size(160, 25);
+            this.find.TabIndex = 17;
+            this.find.Text = "Find";
+            this.find.UseVisualStyleBackColor = true;
+            this.find.Click += new System.EventHandler(this.find_Click);
+            // 
             // refresh_btn
             // 
             this.refresh_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.refresh_btn.Location = new System.Drawing.Point(15, 154);
+            this.refresh_btn.Location = new System.Drawing.Point(15, 167);
             this.refresh_btn.Name = "refresh_btn";
-            this.refresh_btn.Size = new System.Drawing.Size(160, 25);
+            this.refresh_btn.Size = new System.Drawing.Size(160, 27);
             this.refresh_btn.TabIndex = 16;
             this.refresh_btn.Text = "Refresh";
             this.refresh_btn.UseVisualStyleBackColor = true;
@@ -99,9 +116,9 @@
             // 
             this.previous_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.previous_btn.Location = new System.Drawing.Point(15, 34);
+            this.previous_btn.Location = new System.Drawing.Point(15, 37);
             this.previous_btn.Name = "previous_btn";
-            this.previous_btn.Size = new System.Drawing.Size(160, 25);
+            this.previous_btn.Size = new System.Drawing.Size(160, 27);
             this.previous_btn.TabIndex = 12;
             this.previous_btn.Text = "Previous";
             this.previous_btn.UseVisualStyleBackColor = true;
@@ -111,9 +128,9 @@
             // 
             this.commit_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.commit_btn.Location = new System.Drawing.Point(15, 194);
+            this.commit_btn.Location = new System.Drawing.Point(15, 210);
             this.commit_btn.Name = "commit_btn";
-            this.commit_btn.Size = new System.Drawing.Size(160, 25);
+            this.commit_btn.Size = new System.Drawing.Size(160, 27);
             this.commit_btn.TabIndex = 15;
             this.commit_btn.Text = "Commit";
             this.commit_btn.UseVisualStyleBackColor = true;
@@ -123,9 +140,9 @@
             // 
             this.next_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.next_btn.Location = new System.Drawing.Point(15, 74);
+            this.next_btn.Location = new System.Drawing.Point(15, 80);
             this.next_btn.Name = "next_btn";
-            this.next_btn.Size = new System.Drawing.Size(160, 25);
+            this.next_btn.Size = new System.Drawing.Size(160, 27);
             this.next_btn.TabIndex = 13;
             this.next_btn.Text = "Next";
             this.next_btn.UseVisualStyleBackColor = true;
@@ -137,37 +154,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.page_list.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.page_list.FormattingEnabled = true;
-            this.page_list.Location = new System.Drawing.Point(15, 114);
+            this.page_list.Location = new System.Drawing.Point(15, 124);
             this.page_list.Name = "page_list";
-            this.page_list.Size = new System.Drawing.Size(160, 20);
+            this.page_list.Size = new System.Drawing.Size(160, 21);
             this.page_list.TabIndex = 14;
             this.page_list.SelectedIndexChanged += new System.EventHandler(this.page_list_SelectedIndexChanged);
             // 
-            // find
+            // FrmHexEditor
             // 
-            this.find.Location = new System.Drawing.Point(15, 327);
-            this.find.Name = "find";
-            this.find.Size = new System.Drawing.Size(160, 23);
-            this.find.TabIndex = 17;
-            this.find.Text = "Find";
-            this.find.UseVisualStyleBackColor = true;
-            this.find.Click += new System.EventHandler(this.find_Click);
-            // 
-            // input_box
-            // 
-            this.input_box.Location = new System.Drawing.Point(15, 281);
-            this.input_box.Name = "input_box";
-            this.input_box.Size = new System.Drawing.Size(160, 21);
-            this.input_box.TabIndex = 18;
-            // 
-            // HexEditor
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 581);
+            this.ClientSize = new System.Drawing.Size(825, 629);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "HexEditor";
+            this.Name = "FrmHexEditor";
+            this.ShowInTaskbar = false;
             this.Text = "HexEditor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HexEdit_FormClosing);
             this.Load += new System.EventHandler(this.HexEdit_Load);

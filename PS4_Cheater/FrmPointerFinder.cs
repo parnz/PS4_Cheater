@@ -11,17 +11,17 @@ using System.Windows.Forms;
 namespace PS4_Cheater
 {
 
-    public partial class PointerFinder : Form
+    public partial class FrmPointerFinder : Form
     {
         private PointerList pointerList = new PointerList();
         private ProcessManager processManager = null;
         private ulong address = 0;
         private DataGridView cheatList;
         private List<PointerResult> pointerResults  = new List<PointerResult>();
-        private main mainForm;
+        private FrmMain mainForm;
         private MemoryHelper MemoryHelper;
 
-        public PointerFinder(main mainForm, ulong address, string dataType, ProcessManager processManager, DataGridView cheat_list_view)
+        public FrmPointerFinder(FrmMain mainForm, ulong address, string dataType, ProcessManager processManager, DataGridView cheat_list_view)
         {
             MemoryHelper = new MemoryHelper(true, 0);
             MemoryHelper.InitMemoryHandler(dataType, CONSTANT.EXACT_VALUE, true);

@@ -14,7 +14,7 @@ using librpc;
 
 namespace PS4_Cheater
 {
-    public partial class HexEditor : Form
+    public partial class FrmHexEditor : Form
     {
         private MappedSection section;
         private MemoryHelper memoryHelper;
@@ -26,7 +26,7 @@ namespace PS4_Cheater
 
         const int page_size = 8 * 1024 * 1024;
 
-        public HexEditor(MemoryHelper memoryHelper, int offset, MappedSection section)
+        public FrmHexEditor(MemoryHelper memoryHelper, int offset, MappedSection section)
         {
             InitializeComponent();
 

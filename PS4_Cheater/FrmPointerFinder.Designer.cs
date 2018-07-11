@@ -1,6 +1,6 @@
 ﻿namespace PS4_Cheater
 {
-    partial class PointerFinder
+    partial class FrmPointerFinder
     {
         /// <summary>
         /// Required designer variable.
@@ -49,34 +49,34 @@
             this.status_strip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progress_bar,
             this.msg});
-            this.status_strip.Location = new System.Drawing.Point(0, 399);
+            this.status_strip.Location = new System.Drawing.Point(0, 433);
             this.status_strip.Name = "status_strip";
-            this.status_strip.Size = new System.Drawing.Size(851, 22);
+            this.status_strip.Size = new System.Drawing.Size(776, 23);
             this.status_strip.TabIndex = 2;
             this.status_strip.Text = "statusStrip1";
             // 
             // progress_bar
             // 
             this.progress_bar.Name = "progress_bar";
-            this.progress_bar.Size = new System.Drawing.Size(600, 16);
+            this.progress_bar.Size = new System.Drawing.Size(600, 17);
             // 
             // msg
             // 
             this.msg.Name = "msg";
-            this.msg.Size = new System.Drawing.Size(0, 17);
+            this.msg.Size = new System.Drawing.Size(0, 18);
             // 
             // address_box
             // 
-            this.address_box.Location = new System.Drawing.Point(202, 10);
+            this.address_box.Location = new System.Drawing.Point(202, 11);
             this.address_box.Name = "address_box";
-            this.address_box.Size = new System.Drawing.Size(133, 21);
+            this.address_box.Size = new System.Drawing.Size(133, 20);
             this.address_box.TabIndex = 3;
             // 
             // find_btn
             // 
-            this.find_btn.Location = new System.Drawing.Point(351, 8);
+            this.find_btn.Location = new System.Drawing.Point(351, 9);
             this.find_btn.Name = "find_btn";
-            this.find_btn.Size = new System.Drawing.Size(96, 23);
+            this.find_btn.Size = new System.Drawing.Size(96, 25);
             this.find_btn.TabIndex = 4;
             this.find_btn.Text = "First Scan";
             this.find_btn.UseVisualStyleBackColor = true;
@@ -84,10 +84,10 @@
             // 
             // level_updown
             // 
-            this.level_updown.Location = new System.Drawing.Point(11, 11);
+            this.level_updown.Location = new System.Drawing.Point(11, 12);
             this.level_updown.Name = "level_updown";
             this.level_updown.ReadOnly = true;
-            this.level_updown.Size = new System.Drawing.Size(120, 21);
+            this.level_updown.Size = new System.Drawing.Size(120, 20);
             this.level_updown.TabIndex = 6;
             // 
             // pointer_finder_worker
@@ -107,20 +107,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pointer_list_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pointer_list_view.Location = new System.Drawing.Point(0, 37);
+            this.pointer_list_view.Location = new System.Drawing.Point(0, 40);
             this.pointer_list_view.Name = "pointer_list_view";
             this.pointer_list_view.ReadOnly = true;
             this.pointer_list_view.RowTemplate.Height = 23;
             this.pointer_list_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pointer_list_view.Size = new System.Drawing.Size(851, 362);
+            this.pointer_list_view.Size = new System.Drawing.Size(776, 392);
             this.pointer_list_view.TabIndex = 7;
             this.pointer_list_view.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pointer_list_view_CellDoubleClick);
             // 
             // next_btn
             // 
-            this.next_btn.Location = new System.Drawing.Point(471, 8);
+            this.next_btn.Location = new System.Drawing.Point(453, 9);
             this.next_btn.Name = "next_btn";
-            this.next_btn.Size = new System.Drawing.Size(96, 23);
+            this.next_btn.Size = new System.Drawing.Size(96, 25);
             this.next_btn.TabIndex = 8;
             this.next_btn.Text = "Next Scan";
             this.next_btn.UseVisualStyleBackColor = true;
@@ -137,9 +137,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(143, 19);
+            this.label1.Location = new System.Drawing.Point(148, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Address:";
             // 
@@ -148,19 +148,19 @@
             this.fast_scan_box.AutoSize = true;
             this.fast_scan_box.Checked = true;
             this.fast_scan_box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.fast_scan_box.Location = new System.Drawing.Point(706, 12);
+            this.fast_scan_box.Location = new System.Drawing.Point(579, 13);
             this.fast_scan_box.Name = "fast_scan_box";
-            this.fast_scan_box.Size = new System.Drawing.Size(72, 16);
+            this.fast_scan_box.Size = new System.Drawing.Size(71, 17);
             this.fast_scan_box.TabIndex = 10;
             this.fast_scan_box.Text = "FastScan";
             this.fast_scan_box.UseVisualStyleBackColor = true;
             this.fast_scan_box.CheckedChanged += new System.EventHandler(this.fast_scan_box_CheckedChanged);
             // 
-            // PointerFinder
+            // FrmPointerFinder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 421);
+            this.ClientSize = new System.Drawing.Size(776, 456);
             this.Controls.Add(this.fast_scan_box);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.next_btn);
@@ -169,7 +169,8 @@
             this.Controls.Add(this.find_btn);
             this.Controls.Add(this.address_box);
             this.Controls.Add(this.status_strip);
-            this.Name = "PointerFinder";
+            this.Name = "FrmPointerFinder";
+            this.ShowInTaskbar = false;
             this.Text = "Pointer Finder";
             this.Load += new System.EventHandler(this.PointerFinder_Load);
             this.status_strip.ResumeLayout(false);

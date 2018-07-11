@@ -1,6 +1,6 @@
 ﻿namespace PS4_Cheater
 {
-    partial class NewAddress
+    partial class FrmNewAddress
     {
         /// <summary>
         /// Required designer variable.
